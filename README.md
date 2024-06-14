@@ -42,7 +42,7 @@ O projeto está organizado da seguinte maneira:
 
 ## 😻 Entrega Deste Desafio de Projeto (Lab)
 
--   Dê um fork neste projeto e reescreva este README.md. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para resolver o problema proposto: "Previsão de Estoque Inteligente".
+-   Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para resolver o problema proposto: "Previsão de Estoque Inteligente".
 -   Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
 
 ## 🤔 Dúvidas?
