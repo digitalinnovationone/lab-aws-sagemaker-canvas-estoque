@@ -14,25 +14,25 @@ O projeto está organizado da seguinte maneira:
 
 ## 🚀 Passo a Passo
 
-### 1. Selecionar Dataset 📂
+### 1. Selecionar Dataset
 
 -   Navegue até a pasta `datasets` deste repositório.
 -   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
 -   Faça o upload do dataset no SageMaker Canvas.
 
-### 2. Construir/Treinar o Modelo de ML 🤖
+### 2. Construir/Treinar o Modelo de ML
 
 -   No SageMaker Canvas, importe o dataset que você selecionou.
 -   Configure as variáveis de entrada e saída de acordo com os dados.
 -   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
 
-### 3. Analisar o Modelo de ML 🔍
+### 3. Analisar o Modelo de ML
 
 -   Após o treinamento, examine as métricas de performance do modelo.
 -   Verifique as principais características que influenciam as previsões.
 -   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
 
-### 4. Previsões 📈
+### 4. Previsões
 
 -   Use o modelo treinado para fazer previsões de estoque.
 -   Exporte os resultados e analise as previsões geradas.
