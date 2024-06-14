@@ -8,42 +8,41 @@ Antes de começar, certifique-se de ter uma conta na AWS.
 
 Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
 
-## 📁 Estrutura do Projeto
 
-O projeto está organizado da seguinte maneira:
+## 🎯 Objetivos Deste Desafio de Projeto (Lab)
 
--   `datasets/`: Contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
+![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/d97872ce-ef02-445e-bd8d-91a050737763)
+
+- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
+- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
+- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
+
 
 ## 🚀 Passo a Passo
 
 ### 1. Selecionar Dataset
 
--   Navegue até a pasta `datasets` deste repositório.
+-   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
 -   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
 -   Faça o upload do dataset no SageMaker Canvas.
 
-### 2. Construir/Treinar o Modelo de ML
+### 2. Construir/Treinar
 
 -   No SageMaker Canvas, importe o dataset que você selecionou.
 -   Configure as variáveis de entrada e saída de acordo com os dados.
 -   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
 
-### 3. Analisar o Modelo de ML
+### 3. Analisar
 
 -   Após o treinamento, examine as métricas de performance do modelo.
 -   Verifique as principais características que influenciam as previsões.
 -   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
 
-### 4. Previsões
+### 4. Prever
 
 -   Use o modelo treinado para fazer previsões de estoque.
 -   Exporte os resultados e analise as previsões geradas.
 -   Documente suas conclusões e qualquer insight obtido a partir das previsões.
-
-## 😻 Entrega Deste Desafio de Projeto (Lab)
-
--   Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para resolver o problema proposto: "Previsão de Estoque Inteligente".
--   Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
 
 ## 🤔 Dúvidas?
 
