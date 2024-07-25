@@ -1,47 +1,47 @@
-# 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
+# 📊 Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
-
-## 📋 Pré-requisitos
-
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
-
+Neste projeto utilizei do ChatGPT e SageMaker Canvas para desenvolver um sistema de estoque inteligente com Machine learning (ML).
 
 ## 🎯 Objetivos Deste Desafio de Projeto (Lab)
 
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
-
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
-
+O objetivo deste desafio é aprimorar minhas habilidade com Machine Learning low-code, aprender mais sobre o Amazon SageMaker e principalemente aprender como a inteligência artificial pode ajudar no mercado profissional ajudando empresas com tomada de decisões e previsões futuras.
 
 ## 🚀 Passo a Passo
 
-### 1. Selecionar Dataset
+### 1. Desenvolver Dataset
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
+-   Utilizei o ChatGPT para desenvolver um DataSet com informações fícticias utilizando o seguinte prompt:
+
+Crie um arquivo CVS contendo as colunas (ID_Produto, ID_Cliente, Valor, Data, Quantidade_estoque).
+utilizarei estes dados para treinamento de um modelo de estoque inteligente.
+
+{REGRAS}
+
+- Sempre que um produto chegar a quantidade 10 reabasteça o material,
+- Preencha o arquivo com no minimo 6 compras de produtos variados ficticios por dia.
+- Preencha ao arquivo comecando do dia 01-07-2024 terminando em 17-07-2-2024
 
 ### 2. Construir/Treinar
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
+-   No SageMaker Canvas, importei o dataset criado.
+-   Configurei as variáveis de entrada e saída.
+-   Iniciei o treinamento do modelo.
 
 ### 3. Analisar
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
+-   Após o treinamento, examinei as métricas de performance do modelo.
+-   Verifiquei as principais características que influenciam as previsões que foram a quantidade de material em estoque (quantidade_estoque) e o valor do produto (valor).
 
 ### 4. Prever
 
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
+-   Usei o modelo treinado para fazer previsões de estoque.
+-   Analisando as previsões geradas notamos claramente que o principal influenciador nos nossos resultados é a quantidade de material em estoque, ja que quando aumentamos a quantidade em estoque de 50 para 10 notamos uma diminuição significativa de vendas para todos os produtos.
+-   Notamos também que o produto P007 não tem alterações relevantes nas vendas independente da quantidade em estoque ou valor, o que pode indicar um grande volume de saída, possibilitando talvez o aumento do estoque deste material.
+-   O produto P005 teve um aumento de 63% de saída quanto alteramos o valor de 70 para 50.
+-   O produto P003 teve um aumento de 80% de saída quando aumentamos a quantidade em estoque de 10 para 100, o que pode indicar um maior volume de compras em maiores quantidades.
+-   Os demais produtos possuem alterações relevantes somente quando diminuimos o período analisado, consequentimente alterações negativas, o que pode indicar a necessidade de mais atenção nesses produtos.
 
-## 🤔 Dúvidas?
+## Agradecimentos
 
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+Espero que tenham gostado do meu projeto, se quiserem podem me seguir aqui no Github e no linkedin para mais projetos:
+https://www.linkedin.com/in/andr%C3%A9-abichabicki-46b5b1193/
