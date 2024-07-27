@@ -20,28 +20,42 @@ Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda p
 
 ### 1. Selecionar Dataset
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
+O dataset escolhido foi o "canvas-sample-retail-electronics-forecasting", modelo ideal para a prática do SageMaker. Ele contém as colunas:
+
+- item_id: Identificador único de produtos.
+- location: Loja onde as vendas ou inventários foram registrados.
+- time_stamp: Data e hora do registro.
+- demand: Demanda por item na data especificada.
+- price: Preço de venda do item.
+- product_category: Categoria do produto.
 
 ### 2. Construir/Treinar
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
+Na etapa de construção do modelo no SageMaker, as variáveis foram configuradas:
+
+- Variável-alvo: "price" (para previsão de preço).
+- Timestamp: Data e hora dos registros.
+- Identificador único: "item_id".
+- Agrupador: "location".
+
+Após selecionar o "quick-build" por se tratar de uma prática, treinei o modelo em modo Standart.
 
 ### 3. Analisar
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
+Métricas de desempenho do modelo:
+
+- Avg. wQL: Média da precisão em quantis ponderados (P10, P50, P90). Valor de 0.017 indica alta precisão.
+- MAPE: Erro percentual médio das previsões. Valor de 0.012 (1.2% de erro médio).
+- WAPE: Erro absoluto ponderado. Valor de 0.013 (1.3% de erro absoluto).
+- RMSE: Raiz quadrada da média dos erros quadráticos. Valor de 2.278, sugerindo baixa média de erros quadráticos.
+- MASE: Erro absoluto escalado. Valor de 0.000, indicando precisão excepcional.
+
+A análise revelou que:
+
+- "demand": Contribui com 57,97% para a acurácia do modelo.
+- "product_category": Contribui com 42,03% para a acurácia do modelo.
 
 ### 4. Prever
 
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
+SageMaker Canvas oferece previsões em "batch" ou individual. Com muitos SKUs, a previsão em "batch" é inviável no tier gratuito. Foram feitas previsões individuais, com intervalos de P10 (pessimista) e P90 (otimista) e P50 como previsão estável. Estimativas de lucro ou prejuízo podem ser obtidas para o período previsto (3 meses a partir do último dado).
 
-## 🤔 Dúvidas?
-
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
