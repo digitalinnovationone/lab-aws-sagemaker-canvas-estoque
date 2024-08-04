@@ -1,47 +1,121 @@
-# 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
+# Previsão de Estoque Inteligente na AWS com [SageMaker Canvas] (https://aws.amazon.com/pt/sagemaker/canvas/)
 
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
+## Visão Geral
 
-## 📋 Pré-requisitos
+- Este projeto tem como objetivo desenvolver um sistema de previsão de estoque inteligente para a empresa de flower design Rico Prado Lobo Flores, utilizando machine learning com o SageMaker Canvas da AWS. O objetivo é otimizar a gestão de estoque, reduzir custos operacionais e melhorar a eficiência e rentabilidade do negócio.
 
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
+## Principais Característicias
+
+- Análise Abrangente: Incorpora dados de vendas de 2023, incluindo promoções, eventos e tendências sazonais;
+- Tecnologia Avançada: Aproveita as capacidades de AutoML do SageMaker Canvas para otimizar a seleção e treinamento do modelo;
+- Suporte à Decisão: Gera insights acionáveis para uma tomada de decisão ágil e estratégica.
+- Precisão Comprovada: Alcança alta acurácia nas previsões, respaldada por métricas de desempenho robustas;
+- Impacto no Negócio: Potencializa a eficiência operacional e a competitividade da empresa no mercado.
+
+O sistema desenvolvido permite à empresa tomar decisões mais assertivas baseadas em dados, aumentando sua competitividade no mercado.
+
+# Descrição detalhada do projeto abaixo
+
+## Introdução
+
+- Este projeto visa desenvolver um sistema de previsão de estoque inteligente para a empresa de flower design Rico Prado Lobo Flores, utilizando modelo de machine learning.
+
+## Benefícios
+
+- A implementação otimizará a gestão de estoque, reduzirá custos operacionais e melhorará a eficiência e rentabilidade. Além disso, permitirá à empresa tomar decisões mais estratégicas e rápidas, baseadas em dados, aumentando sua competitividade.
 
 
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
+## Objetivo
 
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
+- Otimizar a gestão de estoque, reduzir custos operacionais e melhorar a eficiência e rentabilidade do negócio.
 
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
+## Passo a Passo
+
+### 1.Dataset:
+
+- Para assegurar consistência e uma análise abrangente, foram consideradas bases de dados referentes a todo o ano de 2023;
+- O dataset foi criado levando em conta variáveis que podem impactar as vendas ao longo do período, tais como: promoções, dia da semana, eventos, temperatura e estação do ano.
+
+### 2.Pré-processamento dos Dados:
+
+- Limpeza dos Dados: Remoção de valores nulos e inconsistentes;
+- Feature Engineering: Criação de novas variáveis baseadas em datas e eventos;
+- Normalização: Normalização das variáveis para melhorar a performance do modelo.
+
+### 3.Treinamento do Modelo:
+
+- Tipo de Modelo: Time Series Forecasting (Previsão de Séries Temporais);
+- Configuração da Série Temporal:
+
+   a)ID da Série: ID do Produto;
+
+   b)Tipo de Modelo: Selecionado automaticamente pelo SageMaker Canvas.
+
+- Seleção do Modelo: O SageMaker Canvas recomenda automaticamente o tipo de modelo mais apropriado para a análise, utilizando técnicas de AutoML (Automated Machine Learning);
+- Objetivo: O modelo foi treinado para prever valores futuros de "Quantidade Vendida" utilizando dados históricos;
+- Processo:
+  
+   a)Análise dos dados de entrada;
+
+   b)Seleção automática do tipo de modelo mais adequado;
+
+   c)Treinamento e otimização do modelo escolhido;
+
+   d)Avaliação da performance do modelo;
+
+   e)Variável Alvo: Quantidade Vendida;
+
+   f)Variáveis de Entrada: Dados históricos de vendas, possivelmente incluindo variáveis como dia da semana, estação do ano, eventos especiais, temperatura do dia e promoções.
 
 
-## 🚀 Passo a Passo
+* Vantagens da Seleção Automática:
 
-### 1. Selecionar Dataset
+- Elimina a necessidade de conhecimento técnico profundo em seleção de modelos;
+- Adapta-se às características específicas dos dados fornecidos;
+- Potencialmente testa múltiplos tipos de modelos para encontrar o mais adequado.
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
+* Aplicações Práticas (este modelo pode ajudar a responder questões de negócios como):
 
-### 2. Construir/Treinar
+- Como as vendas serão afetadas se os preços forem aumentados em 10%?;
+- Quanto estoque deve ser pedido para a temporada de festas?.
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
 
-### 3. Analisar
+### 4. Avaliação do Modelo:
+   
+- As métricas de performance do modelo foram avaliadas utilizando o conjunto de validação. Os resultados são os seguintes:
+  
+   a)Avg.wQL: 0.074;
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
+   b)MAPE: 0.002;
+   
+   c)WAPE: 0.015
 
-### 4. Prever
+   d)RMSE: 1.382
+   
+   e)MASE: 0.016
 
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
+### 5. Análise e Insights:
 
-## 🤔 Dúvidas?
+- Precisão das Previsões: As métricas MAPE e WAPE indicam que o modelo tem alta precisão nas previsões;
+- Erro Médio: O RMSE sugere que o modelo tem um erro médio aceitável, considerando a escala dos dados;
+- Desempenho Relativo: O MASE indica que o modelo performa significativamente melhor do que um modelo de referência simples.
 
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+### 6. Aplicações Práticas: As previsões geradas pelo modelo podem ser utilizadas para:
+
+- Planejar aumentos de preços e entender seu impacto nas vendas;
+- Determinar a quantidade de estoque necessária para períodos de alta demanda, como a temporada de festas.
+
+### 7. Conclusões:
+
+- O sistema de previsão de estoque desenvolvido mostrou-se altamente preciso e eficiente;
+-  As previsões geradas podem ser utilizadas para otimizar a gestão de estoque, reduzir custos operacionais e melhorar a eficiência e rentabilidade do negócio;
+-  A tomada de decisões baseada em dados permitirá à empresa ser mais estratégica, responder mais rapidamente e de forma mais assertiva às demandas do mercado, aumentando sua competitividade.
+
+### 8. Próximos Passos:
+
+- Implementação em Produção: Colocar o sistema de previsão de estoque em um ambiente de produção e monitorar continuamente sua performance;
+- Refinamento Contínuo: Ajustar e aprimorar o modelo com novos dados e variáveis para aumentar a precisão das previsões;
+- Integração de Sistemas: Incorporar as previsões ao sistema de gestão de estoque da empresa para automatizar processos e facilitar a tomada de decisões;
+- Treinamento da Equipe: Capacitar os colaboradores para interpretar e utilizar efetivamente os insights gerados pelo sistema;
+- Avaliação de Impacto: Medir e analisar o impacto do sistema na eficiência operacional, redução de custos e rentabilidade do negócio.
+  
