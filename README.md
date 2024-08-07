@@ -1,47 +1,55 @@
-# 📊 Previsão de Estoque Inteligente na AWS com [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
-
-Bem-vindo ao desafio de projeto "Previsão de Estoque Inteligente na AWS com SageMaker Canvas. Neste Lab DIO, você aprenderá a usar o SageMaker Canvas para criar previsões de estoque baseadas em Machine Learning (ML). Siga os passos abaixo para completar o desafio!
+# 📊 Previsão de Estoque Inteligente na AWS com SageMaker Canvas
 
 ## 📋 Pré-requisitos
 
-Antes de começar, certifique-se de ter uma conta na AWS. Se precisar de ajuda para criar sua conta, confira nosso repositório [AWS Cloud Quickstart](https://github.com/digitalinnovationone/aws-cloud-quickstart).
+Criei  uma conta na AWS [SageMaker Canvas](https://aws.amazon.com/pt/sagemaker/canvas/)
+<img width="977" alt="SageMaker Canvas" src="https://github.com/user-attachments/assets/71a3a2fc-213c-4035-8b9c-7406a812632d">
 
-
-## 🎯 Objetivos Deste Desafio de Projeto (Lab)
-
-![image](https://github.com/digitalinnovationone/lab-aws-sagemaker-canvas-estoque/assets/730492/72f5c21f-5562-491e-aa42-2885a3184650)
-
-- Dê um fork neste projeto e reescreva este `README.md`. Sinta-se à vontade para detalhar todo o processo de criação do seu Modelo de ML para uma "Previsão de Estoque Inteligente".
-- Para isso, siga o [passo a passo] descrito a seguir e evolua as suas habilidades em ML no-code com o Amazon SageMaker Canvas.
-- Ao concluir, envie a URL do seu repositório com a solução na plataforma da DIO.
 
 
 ## 🚀 Passo a Passo
 
 ### 1. Selecionar Dataset
 
--   Navegue até a pasta `datasets` deste repositório. Esta pasta contém os datasets que você poderá escolher para treinar e testar seu modelo de ML. Sinta-se à vontade para gerar/enriquecer seus próprios datasets, quanto mais você se engajar, mais relevante esse projeto será em seu portfólio.
--   Escolha o dataset que você usará para treinar seu modelo de previsão de estoque.
--   Faça o upload do dataset no SageMaker Canvas.
+-   Fiz o upload do dataset no SageMaker Canvas.
+<img width="458" alt="dataset" src="https://github.com/user-attachments/assets/ccd79a03-bc90-478a-b6b9-8737166a41fc">
+
 
 ### 2. Construir/Treinar
 
--   No SageMaker Canvas, importe o dataset que você selecionou.
--   Configure as variáveis de entrada e saída de acordo com os dados.
--   Inicie o treinamento do modelo. Isso pode levar algum tempo, dependendo do tamanho do dataset.
+-   Configurei  as variáveis de entrada e saída de acordo com os dados.
+  ![Modelo de configuração](https://github.com/user-attachments/assets/7567e73c-09c4-4652-ae79-96f38816d336)
+
+-   Iniciei  o treinamento do modelo. 
+  <img width="1260" alt="Visão geral do modelo" src="https://github.com/user-attachments/assets/692d7461-929e-4b87-877b-b47d82698d4d">
+
 
 ### 3. Analisar
 
--   Após o treinamento, examine as métricas de performance do modelo.
--   Verifique as principais características que influenciam as previsões.
--   Faça ajustes no modelo se necessário e re-treine até obter um desempenho satisfatório.
+-   Após o treinamento, examinei  as métricas de performance do modelo.
+<img width="809" alt="analyze" src="https://github.com/user-attachments/assets/2568710c-54b8-498c-a75d-e721dda5f6e0">
+
+ A Perda Média de Quantilo Ponderada (wQL) avalia a previsão como um todo, média da precisão em pontos de distribuição específicos chamados quantis para quantis P10, P50 e P90. Um valor menor indica um modelo mais preciso.
+
+ Erro Percentual Absoluto Médio (MAPE) é o erro percentual (diferença percentual da média prevista e do valor real) em média em todos os pontos de tempo. Um valor menor indica um modelo mais preciso com MAPE=0 como um modelo perfeito sem erros.
+
+ O Erro Percentual Absoluto Ponderado (WAPE) mede o desvio geral dos valores previstos dos valores observados e é definido pela soma do erro absoluto normalizado pela soma da meta absoluta. Um valor menor indica um modelo mais preciso com WAPE=0 como um modelo perfeito sem erros.
+
+Root Mean Square Error (RMSE) é a raiz quadrada dos erros quadráticos médios. Um RMSE mais baixo indica um modelo mais preciso com RMSE=0 como um modelo perfeito sem erros.
+
+Erro de Escala Absoluto Médio (MASE) é a média do erro absoluto da previsão normalizado pelo erro absoluto médio de um método de previsão de linha de base simples. Um valor menor indica um modelo mais preciso com MASE < 1 como um modelo estimado como melhor do que a linha de base e um MASE > 1 como um modelo estimado como pior do que a linha de base.
+
 
 ### 4. Prever
 
--   Use o modelo treinado para fazer previsões de estoque.
--   Exporte os resultados e analise as previsões geradas.
--   Documente suas conclusões e qualquer insight obtido a partir das previsões.
 
-## 🤔 Dúvidas?
+![single_prediction_results-2](https://github.com/user-attachments/assets/b997bd2d-e6b3-46d3-9942-3555ee72d087)
 
-Esperamos que esta experiência tenha sido enriquecedora e que você tenha aprendido mais sobre Machine Learning aplicado a problemas reais. Se tiver alguma dúvida, não hesite em abrir uma issue neste repositório ou entrar em contato com a equipe da DIO.
+- Para a previsão p10 em Rosa, espera-se que o valor verdadeiro seja menor do que o valor previsto 10% do tempo.
+
+- Para a previsão p50 em Verde Escuro, espera-se que o valor verdadeiro seja menor do que o valor previsto 50% do tempo. Isso também é conhecido como a previsão mediana.
+
+- Para a previsão p90 em Dourado, Espera-se que o valor verdadeiro seja menor do que o valor previsto 90% do tempo.
+
+
+
